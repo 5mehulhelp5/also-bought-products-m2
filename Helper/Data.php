@@ -1,24 +1,20 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Helper;
+namespace Mavenbird\AlsoBought\Helper;
 
 use Magento\Framework\App\Config\Storage\WriterInterface;
 use Magento\Framework\App\Helper\Context;
 use Magento\Framework\ObjectManagerInterface;
 use Magento\Store\Model\StoreManagerInterface;
-use MageMoto\AlsoBought\Helper\AbstractData;
+use Mavenbird\AlsoBought\Helper\AbstractData;
 
-/**
- * Class Data
- * @package MageMoto\AlsoBought\Helper
- */
 class Data extends AbstractData
 {
     const CONFIG_MODULE_PATH = 'alsobought';

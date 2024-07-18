@@ -1,13 +1,13 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Controller\Adminhtml\Logs;
+namespace Mavenbird\AlsoBought\Controller\Adminhtml\Logs;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -16,14 +16,10 @@ use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
 
-/**
- * Class Index
- * @package MageMoto\AlsoBought\Controller\Adminhtml\Logs
- */
 class Index extends Action
 {
     /** Authorization level of a basic admin session */
-    const ADMIN_RESOURCE = 'MageMoto_AlsoBought::logs';
+    const ADMIN_RESOURCE = 'Mavenbird_AlsoBought::logs';
 
     /**
      * Page result factory

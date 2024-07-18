@@ -1,13 +1,13 @@
 {
-  "name": "magemoto/module-who-bought-this-item-also-bought",
+  "name": "mavenbird/module-who-bought-this-item-also-bought",
   "description": "Who bought this item also bought Extension for Magento 2",
   "type": "magento2-module",
   "version": "1.1.1",
   "license": "proprietary",
   "authors": [
     {
-      "name": "MageMoto",
-      "email": "support@magemoto.com"
+      "name": "Mavenbird",
+      "email": "support@mavenbird.com"
     }
   ],
   "autoload": {
@@ -15,7 +15,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "MageMoto\\AlsoBought\\": ""
+      "Mavenbird\\AlsoBought\\": ""
     }
   }
 }

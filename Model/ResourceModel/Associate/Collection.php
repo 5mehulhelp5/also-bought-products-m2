@@ -1,21 +1,17 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Model\ResourceModel\Associate;
+namespace Mavenbird\AlsoBought\Model\ResourceModel\Associate;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
-use MageMoto\AlsoBought\Model\ResourceModel\Associate;
+use Mavenbird\AlsoBought\Model\ResourceModel\Associate;
 
-/**
- * Class Collection
- * @package MageMoto\AlsoBought\Model\ResourceModel\AlsoBought
- */
 class Collection extends AbstractCollection
 {
     /**
@@ -25,7 +21,7 @@ class Collection extends AbstractCollection
      */
     protected function _construct()
     {
-        $this->_init(\MageMoto\AlsoBought\Model\Associate::class, Associate::class);
+        $this->_init(\Mavenbird\AlsoBought\Model\Associate::class, Associate::class);
     }
 
     /**
@@ -68,7 +64,7 @@ class Collection extends AbstractCollection
     }
 
     /**
-     * Truncate table magemoto_wbab_product_link
+     * Truncate table mavenbird_wbab_product_link
      *
      * @return void
      */

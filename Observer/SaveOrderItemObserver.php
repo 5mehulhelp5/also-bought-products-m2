@@ -1,24 +1,20 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Observer;
+namespace Mavenbird\AlsoBought\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\Indexer\IndexerRegistry;
-use MageMoto\AlsoBought\Helper\Data;
-use MageMoto\AlsoBought\Model\Indexer\Action;
+use Mavenbird\AlsoBought\Helper\Data;
+use Mavenbird\AlsoBought\Model\Indexer\Action;
 
-/**
- * Class SaveOrderItemObserver
- * @package MageMoto\AlsoBought\Observer
- */
 class SaveOrderItemObserver implements ObserverInterface
 {
     /**

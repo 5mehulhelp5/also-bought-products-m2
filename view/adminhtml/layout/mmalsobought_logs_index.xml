@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,7 +13,7 @@
     <body>
         <referenceBlock name="menu">
             <action method="setActive">
-                <argument name="itemId" xsi:type="string">MageMoto_AlsoBought::logs</argument>
+                <argument name="itemId" xsi:type="string">Mavenbird_AlsoBought::logs</argument>
             </action>
         </referenceBlock>
         <referenceBlock name="page.title">
@@ -22,7 +22,7 @@
             </action>
         </referenceBlock>
         <referenceContainer name="content">
-            <uiComponent name="magemoto_alsobought_listing"/>
+            <uiComponent name="mavenbird_alsobought_listing"/>
         </referenceContainer>
     </body>
 </page>

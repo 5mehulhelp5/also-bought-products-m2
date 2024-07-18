@@ -1,23 +1,19 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Model;
+namespace Mavenbird\AlsoBought\Model;
 
 use Exception;
 use Magento\Catalog\Api\ProductRepositoryInterface;
-use MageMoto\AlsoBought\Api\AlsoBoughtRepositoryInterface;
-use MageMoto\AlsoBought\Model\ResourceModel\Associate\CollectionFactory;
+use Mavenbird\AlsoBought\Api\AlsoBoughtRepositoryInterface;
+use Mavenbird\AlsoBought\Model\ResourceModel\Associate\CollectionFactory;
 
-/**
- * Class AlsoBoughtRepository
- * @package MageMoto\AlsoBought\Model
- */
 class AlsoBoughtRepository implements AlsoBoughtRepositoryInterface
 {
     /**

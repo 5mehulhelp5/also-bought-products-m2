@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 -->
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
-    <widget id="mm_alsobought_widget" class="MageMoto\AlsoBought\Block\Product\ProductList\Widget" ttl="86400">
-        <label>MageMoto Also Bought</label>
+    <widget id="mm_alsobought_widget" class="Mavenbird\AlsoBought\Block\Product\ProductList\Widget" ttl="86400">
+        <label>Mavenbird Also Bought</label>
         <description>Show Also Bought Widget</description>
         <parameters>
             <parameter name="title" xsi:type="text" visible="true" sort_order="10">
                 <label>Title of block</label>
             </parameter>
-            <parameter name="design" xsi:type="select" source_model="MageMoto\AlsoBought\Model\Config\Source\Layout" visible="true" sort_order="20">
+            <parameter name="design" xsi:type="select" source_model="Mavenbird\AlsoBought\Model\Config\Source\Layout" visible="true" sort_order="20">
                 <label>Layout</label>
             </parameter>
-            <parameter name="show_list" xsi:type="multiselect" source_model="MageMoto\AlsoBought\Model\Config\Source\ShowList" visible="true" sort_order="30">
+            <parameter name="show_list" xsi:type="multiselect" source_model="Mavenbird\AlsoBought\Model\Config\Source\ShowList" visible="true" sort_order="30">
                 <label>Show List</label>
             </parameter>
             <parameter name="template" xsi:type="select" required="true" visible="true">
                 <label>Template</label>
                 <options>
-                    <option name="default" value="MageMoto_AlsoBought::product/list/alsobought.phtml" selected="true">
+                    <option name="default" value="Mavenbird_AlsoBought::product/list/alsobought.phtml" selected="true">
                         <label>Also Bought Products Template</label>
                     </option>
-                    <option name="sidebar" value="MageMoto_AlsoBought::product/list/sidebar.phtml">
+                    <option name="sidebar" value="Mavenbird_AlsoBought::product/list/sidebar.phtml">
                         <label>Also Bought Products Template</label>
                     </option>
                 </options>

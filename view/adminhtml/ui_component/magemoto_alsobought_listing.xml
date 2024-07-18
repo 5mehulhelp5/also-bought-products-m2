@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,15 +11,15 @@
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">magemoto_alsobought_listing.magemoto_alsobought_listing_data_source</item>
-            <item name="deps" xsi:type="string">magemoto_alsobought_listing.magemoto_alsobought_listing_data_source</item>
+            <item name="provider" xsi:type="string">mavenbird_alsobought_listing.mavenbird_alsobought_listing_data_source</item>
+            <item name="deps" xsi:type="string">mavenbird_alsobought_listing.mavenbird_alsobought_listing_data_source</item>
         </item>
-        <item name="spinner" xsi:type="string">magemoto_alsobought_columns</item>
+        <item name="spinner" xsi:type="string">mavenbird_alsobought_columns</item>
     </argument>
-    <dataSource name="magemoto_alsobought_listing_data_source">
+    <dataSource name="mavenbird_alsobought_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
-            <argument name="name" xsi:type="string">magemoto_alsobought_listing_data_source</argument>
+            <argument name="name" xsi:type="string">mavenbird_alsobought_listing_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">assoc_id</argument>
             <argument name="requestFieldName" xsi:type="string">assoc_id</argument>
             <argument name="data" xsi:type="array">
@@ -40,7 +40,7 @@
         <filters name="listing_filters"/>
         <paging name="listing_paging"/>
     </listingToolbar>
-    <columns name="magemoto_alsobought_columns">
+    <columns name="mavenbird_alsobought_columns">
         <selectionsColumn name="ids">
             <settings>
                 <indexField>assoc_id</indexField>

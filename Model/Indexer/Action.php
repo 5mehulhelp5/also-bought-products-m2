@@ -1,25 +1,21 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Model\Indexer;
+namespace Mavenbird\AlsoBought\Model\Indexer;
 
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Mview\ActionInterface;
-use MageMoto\AlsoBought\Helper\Data;
-use MageMoto\AlsoBought\Model\ResourceModel\Associate;
-use MageMoto\AlsoBought\Model\ResourceModel\AssociateFactory;
+use Mavenbird\AlsoBought\Helper\Data;
+use Mavenbird\AlsoBought\Model\ResourceModel\Associate;
+use Mavenbird\AlsoBought\Model\ResourceModel\AssociateFactory;
 use Psr\Log\LoggerInterface;
 
-/**
- * Class Action
- * @package MageMoto\AlsoBought\Model\Indexer
- */
 class Action implements \Magento\Framework\Indexer\ActionInterface, ActionInterface
 {
     /**

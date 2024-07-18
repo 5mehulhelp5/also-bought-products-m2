@@ -1,13 +1,13 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Model\Config;
+namespace Mavenbird\AlsoBought\Model\Config;
 
 use Exception;
 use Magento\Framework\App\Cache\TypeListInterface;
@@ -19,11 +19,10 @@ use Magento\Framework\Message\ManagerInterface;
 use Magento\Framework\Model\Context;
 use Magento\Framework\Model\ResourceModel\AbstractResource;
 use Magento\Framework\Registry;
-use MageMoto\AlsoBought\Model\Indexer\Action;
+use Mavenbird\AlsoBought\Model\Indexer\Action;
 
 /**
  * Class Scope
- * @package MageMoto\AlsoBought\Model\Config
  */
 class Type extends Value
 {

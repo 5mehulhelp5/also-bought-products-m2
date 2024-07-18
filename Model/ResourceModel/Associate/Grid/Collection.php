@@ -1,13 +1,13 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Model\ResourceModel\Associate\Grid;
+namespace Mavenbird\AlsoBought\Model\ResourceModel\Associate\Grid;
 
 use Magento\Framework\Data\Collection\Db\FetchStrategyInterface as FetchStrategy;
 use Magento\Framework\Data\Collection\EntityFactoryInterface as EntityFactory;
@@ -16,10 +16,6 @@ use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult;
 use Psr\Log\LoggerInterface as Logger;
 
-/**
- * Class Collection
- * @package MageMoto\AlsoBought\Model\ResourceModel\AlsoBought\Grid
- */
 class Collection extends SearchResult
 {
     /**
@@ -40,7 +36,7 @@ class Collection extends SearchResult
         FetchStrategy $fetchStrategy,
         EventManager $eventManager,
         $mainTable = 'mm_wbab_product_assoc',
-        $resourceModel = \MageMoto\AlsoBought\Model\ResourceModel\Associate\Collection::class
+        $resourceModel = \Mavenbird\AlsoBought\Model\ResourceModel\Associate\Collection::class
     ) {
         parent::__construct(
             $entityFactory,

@@ -1,13 +1,13 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Model\ResourceModel;
+namespace Mavenbird\AlsoBought\Model\ResourceModel;
 
 use Magento\Catalog\Model\ResourceModel\Product;
 use Magento\Framework\Exception\LocalizedException;
@@ -15,13 +15,12 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 use Magento\Framework\Model\ResourceModel\Db\Context;
 use Magento\Sales\Model\ResourceModel\Order\Item\Collection;
 use Magento\Sales\Model\ResourceModel\Order\Item\CollectionFactory;
-use MageMoto\AlsoBought\Helper\Data;
-use MageMoto\AlsoBought\Model\Config\Source\Type;
+use Mavenbird\AlsoBought\Helper\Data;
+use Mavenbird\AlsoBought\Model\Config\Source\Type;
 use Zend_Db_Select;
 
 /**
  * Class Rpf
- * @package MageMoto\AlsoBought\Model\ResourceModel
  */
 class Associate extends AbstractDb
 {

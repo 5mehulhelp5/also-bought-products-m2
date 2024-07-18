@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -10,6 +10,6 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="core_layout_render_element">
-        <observer name="magemoto.alsobought.addblock" instance="MageMoto\AlsoBought\Observer\AddBlock"/>
+        <observer name="mavenbird.alsobought.addblock" instance="Mavenbird\AlsoBought\Observer\AddBlock"/>
     </event>
 </config>

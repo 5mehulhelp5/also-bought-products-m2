@@ -1,13 +1,13 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Controller\Ajax;
+namespace Mavenbird\AlsoBought\Controller\Ajax;
 
 use Exception;
 use Magento\Backend\App\Action\Context;
@@ -20,14 +20,10 @@ use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\View\Result\PageFactory;
-use MageMoto\AlsoBought\Block\Product\ProductList\ProductList;
-use MageMoto\AlsoBought\Helper\Data as HelperData;
+use Mavenbird\AlsoBought\Block\Product\ProductList\ProductList;
+use Mavenbird\AlsoBought\Helper\Data as HelperData;
 use Psr\Log\LoggerInterface;
 
-/**
- * Class Load
- * @package MageMoto\AlsoBought\Controller\Ajax
- */
 class Load extends Action
 {
     /**

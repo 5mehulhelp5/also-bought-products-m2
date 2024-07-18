@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,6 +11,6 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="sales_order_save_after">
-        <observer name="mmalsobouhgt_observer" instance="MageMoto\AlsoBought\Observer\SaveOrderItemObserver" />
+        <observer name="mmalsobouhgt_observer" instance="Mavenbird\AlsoBought\Observer\SaveOrderItemObserver" />
     </event>
 </config>

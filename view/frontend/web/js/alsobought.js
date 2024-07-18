@@ -1,6 +1,6 @@
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -8,13 +8,13 @@
 
 define([
     'jquery',
-    'MageMoto_AlsoBought/js/custom-local-storage',
+    'Mavenbird_AlsoBought/js/custom-local-storage',
     'mage/template',
-    'magemoto/alsobought/owl.carousel'
+    'mavenbird/alsobought/owl.carousel'
 ], function ($, customStorage, mageTemplate) {
     'use strict';
 
-    $.widget('magemoto.alsobought_block', {
+    $.widget('mavenbird.alsobought_block', {
         options: {
             ajaxData: {}
         },
@@ -137,5 +137,5 @@ define([
         }
     });
 
-    return $.magemoto.alsobought_block;
+    return $.mavenbird.alsobought_block;
 });

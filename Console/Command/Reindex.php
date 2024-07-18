@@ -1,25 +1,21 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Console\Command;
+namespace Mavenbird\AlsoBought\Console\Command;
 
 use Exception;
 use Magento\Framework\App\State;
-use MageMoto\AlsoBought\Model\ResourceModel\AssociateFactory;
+use Mavenbird\AlsoBought\Model\ResourceModel\AssociateFactory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-/**
- * Class Reindex
- * @package MageMoto\AlsoBought\Console\Command
- */
 class Reindex extends Command
 {
     /**

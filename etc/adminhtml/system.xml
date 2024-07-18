@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -10,13 +10,13 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="magemoto" translate="label" sortOrder="300">
-            <label>MageMoto</label>
+        <tab id="mavenbird" translate="label" sortOrder="300">
+            <label>Mavenbird</label>
         </tab>
-        <section id="magemoto" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="0">
+        <section id="mavenbird" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Who Bought This Item Also Bought</label>
-            <tab>magemoto</tab>
-            <resource>MageMoto_AlsoBought::configuration</resource>
+            <tab>mavenbird</tab>
+            <resource>Mavenbird_AlsoBought::configuration</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
                 <label>General Configuration</label>
                 <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
@@ -26,19 +26,19 @@
                 </field>
                 <field id="type" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
                     <label>Calculate Related Product Base On</label>
-                    <backend_model>MageMoto\AlsoBought\Model\Config\Type</backend_model>
-                    <source_model>MageMoto\AlsoBought\Model\Config\Source\Type</source_model>
+                    <backend_model>Mavenbird\AlsoBought\Model\Config\Type</backend_model>
+                    <source_model>Mavenbird\AlsoBought\Model\Config\Source\Type</source_model>
                     <comment>Require reindex data to apply changes</comment>
                 </field>
                 <field id="process_order_status" translate="label comment" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
                     <label>Process Order With Status</label>
-                    <backend_model>MageMoto\AlsoBought\Model\Config\Type</backend_model>
-                    <source_model>MageMoto\AlsoBought\Model\Config\Source\OrderStatus</source_model>
+                    <backend_model>Mavenbird\AlsoBought\Model\Config\Type</backend_model>
+                    <source_model>Mavenbird\AlsoBought\Model\Config\Source\OrderStatus</source_model>
                     <comment>Select the order status which the module uses to suggest the products displayed in the block. Require reindex data to apply changes</comment>
                 </field>
                 <field id="free_item" translate="label comment" type="select" sortOrder="45" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
                     <label>Suggest for free Items</label>
-                    <backend_model>MageMoto\AlsoBought\Model\Config\Type</backend_model>
+                    <backend_model>Mavenbird\AlsoBought\Model\Config\Type</backend_model>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <comment>Require reindex data to apply changes</comment>
                 </field>
@@ -64,17 +64,17 @@
                 </field>
                 <field id="position" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Position</label>
-                    <source_model>MageMoto\AlsoBought\Model\Config\Source\Position</source_model>
+                    <source_model>Mavenbird\AlsoBought\Model\Config\Source\Position</source_model>
                     <comment>Select the position of the page where the block appears</comment>
                 </field>
                 <field id="layout" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Layout</label>
-                    <source_model>MageMoto\AlsoBought\Model\Config\Source\Layout</source_model>
+                    <source_model>Mavenbird\AlsoBought\Model\Config\Source\Layout</source_model>
                     <comment>Select the layout of suggested products in the frontend</comment>
                 </field>
                 <field id="show_list" translate="label comment" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Show List</label>
-                    <source_model>MageMoto\AlsoBought\Model\Config\Source\ShowList</source_model>
+                    <source_model>Mavenbird\AlsoBought\Model\Config\Source\ShowList</source_model>
                     <comment>Select option(s) above to display them along with products</comment>
                 </field>
                 <field id="limit_product" translate="label comment" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
@@ -96,17 +96,17 @@
                 </field>
                 <field id="position" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Position</label>
-                    <source_model>MageMoto\AlsoBought\Model\Config\Source\CategoryPagePosition</source_model>
+                    <source_model>Mavenbird\AlsoBought\Model\Config\Source\CategoryPagePosition</source_model>
                     <comment>Select the position of the page where the block appears</comment>
                 </field>
                 <field id="layout" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Layout</label>
-                    <source_model>MageMoto\AlsoBought\Model\Config\Source\Layout</source_model>
+                    <source_model>Mavenbird\AlsoBought\Model\Config\Source\Layout</source_model>
                     <comment>Select the layout of suggested products in the frontend</comment>
                 </field>
                 <field id="show_list" translate="label comment" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Show List</label>
-                    <source_model>MageMoto\AlsoBought\Model\Config\Source\ShowList</source_model>
+                    <source_model>Mavenbird\AlsoBought\Model\Config\Source\ShowList</source_model>
                     <comment>Select option(s) above to display them along with products</comment>
                 </field>
                 <field id="limit_product" translate="label comment" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
@@ -128,17 +128,17 @@
                 </field>
                 <field id="position" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Position</label>
-                    <source_model>MageMoto\AlsoBought\Model\Config\Source\CartPagePosition</source_model>
+                    <source_model>Mavenbird\AlsoBought\Model\Config\Source\CartPagePosition</source_model>
                     <comment>Select the position of the page where the block appears</comment>
                 </field>
                 <field id="layout" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Layout</label>
-                    <source_model>MageMoto\AlsoBought\Model\Config\Source\Layout</source_model>
+                    <source_model>Mavenbird\AlsoBought\Model\Config\Source\Layout</source_model>
                     <comment>Select the layout of suggested products in the frontend</comment>
                 </field>
                 <field id="show_list" translate="label comment" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Show List</label>
-                    <source_model>MageMoto\AlsoBought\Model\Config\Source\ShowList</source_model>
+                    <source_model>Mavenbird\AlsoBought\Model\Config\Source\ShowList</source_model>
                     <comment>Select option(s) above to display them along with products</comment>
                 </field>
                 <field id="limit_product" translate="label comment" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
@@ -150,7 +150,7 @@
             <group id="snippet_code" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Snippet Code</label>
                 <field id="custom_position" translate="label" type="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <frontend_model>MageMoto\AlsoBought\Block\Adminhtml\System\SnippetCode</frontend_model>
+                    <frontend_model>Mavenbird\AlsoBought\Block\Adminhtml\System\SnippetCode</frontend_model>
                 </field>
             </group>
         </section>

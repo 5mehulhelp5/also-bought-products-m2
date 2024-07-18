@@ -1,13 +1,13 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Observer;
+namespace Mavenbird\AlsoBought\Observer;
 
 use Magento\Checkout\Model\Session;
 use Magento\Framework\App\RequestInterface;
@@ -15,15 +15,11 @@ use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use MageMoto\AlsoBought\Block\Product\ProductList\AlsoBought;
-use MageMoto\AlsoBought\Block\Product\ProductList\ProductList;
-use MageMoto\AlsoBought\Helper\Data;
-use MageMoto\AlsoBought\Model\Config\Source\CategoryPagePosition;
+use Mavenbird\AlsoBought\Block\Product\ProductList\AlsoBought;
+use Mavenbird\AlsoBought\Block\Product\ProductList\ProductList;
+use Mavenbird\AlsoBought\Helper\Data;
+use Mavenbird\AlsoBought\Model\Config\Source\CategoryPagePosition;
 
-/**
- * Class AddBlock
- * @package MageMoto\AlsoBought\Observer
- */
 class AddBlock implements ObserverInterface
 {
     /**
@@ -107,9 +103,9 @@ class AddBlock implements ObserverInterface
             $position  = $this->helperData->getConfig('position');
             $html      = $this->getBlockHtml($observer->getEvent(), $actionName, $position);
             if ('before-' . $type === $position) {
-                $output = "<div class='mmalsobouhgt-block' id=\"magemoto-alsobought-block-{$position}\" data-position=\"{$position}\">" . $html . '</div>' . $output;
+                $output = "<div class='mmalsobouhgt-block' id=\"mavenbird-alsobought-block-{$position}\" data-position=\"{$position}\">" . $html . '</div>' . $output;
             } elseif ('after-' . $type === $position) {
-                $output .= "<div class='mmalsobouhgt-block' id=\"magemoto-alsobought-block-{$position}\" data-position=\"{$position}\">" . $html . '</div>';
+                $output .= "<div class='mmalsobouhgt-block' id=\"mavenbird-alsobought-block-{$position}\" data-position=\"{$position}\">" . $html . '</div>';
             }
             $transport->setOutput($output);
         }
@@ -164,9 +160,9 @@ class AddBlock implements ObserverInterface
         if ($position === CategoryPagePosition::BEFORE_SIDEBAR
             || $position === CategoryPagePosition::AFTER_SIDEBAR
         ) {
-            $template = 'MageMoto_AlsoBought::product/list/sidebar.phtml';
+            $template = 'Mavenbird_AlsoBought::product/list/sidebar.phtml';
         } else {
-            $template = 'MageMoto_AlsoBought::product/list/alsobought.phtml';
+            $template = 'Mavenbird_AlsoBought::product/list/alsobought.phtml';
         }
         $layout = $event->getLayout();
         $block  = $layout->createBlock(AlsoBought::class);

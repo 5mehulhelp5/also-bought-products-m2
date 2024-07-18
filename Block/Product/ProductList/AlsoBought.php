@@ -1,13 +1,13 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Block\Product\ProductList;
+namespace Mavenbird\AlsoBought\Block\Product\ProductList;
 
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Registry;
@@ -15,19 +15,15 @@ use Magento\Framework\View\Element\FormKey;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Widget\Block\BlockInterface;
-use MageMoto\AlsoBought\Helper\Data;
-use MageMoto\AlsoBought\Model\Config\Source\Layout;
+use Mavenbird\AlsoBought\Helper\Data;
+use Mavenbird\AlsoBought\Model\Config\Source\Layout;
 
-/**
- * Class AlsoBought
- * @package MageMoto\AlsoBought\Block\Product\ProductList
- */
 class AlsoBought extends Template implements BlockInterface
 {
     /**
      * @var string
      */
-    protected $_template = 'MageMoto_AlsoBought::product/list/alsobought.phtml';
+    protected $_template = 'Mavenbird_AlsoBought::product/list/alsobought.phtml';
 
     /**
      * @var Registry

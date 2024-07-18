@@ -1,13 +1,13 @@
 <?php
 /**
- * @author MageMoto Commerce Team
- * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ * @author Mavenbird Commerce Team
+ * @copyright Copyright (c) 2020 Mavenbird Commerce (https://www.mavenbird.com)
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace MageMoto\AlsoBought\Block\Product\ProductList;
+namespace Mavenbird\AlsoBought\Block\Product\ProductList;
 
 use Exception;
 use Magento\Catalog\Api\ProductRepositoryInterface;
@@ -19,20 +19,16 @@ use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Url\Helper\Data as UrlHelper;
 use Magento\Framework\View\Element\FormKey;
 use Magento\Widget\Block\BlockInterface;
-use MageMoto\AlsoBought\Helper\Data;
-use MageMoto\AlsoBought\Model\Config\Source\Layout;
-use MageMoto\AlsoBought\Model\ResourceModel\Associate\CollectionFactory;
+use Mavenbird\AlsoBought\Helper\Data;
+use Mavenbird\AlsoBought\Model\Config\Source\Layout;
+use Mavenbird\AlsoBought\Model\ResourceModel\Associate\CollectionFactory;
 
-/**
- * Class ProductList
- * @package MageMoto\AlsoBought\Block\Product\ProductList
- */
 class ProductList extends AbstractProduct implements BlockInterface
 {
     /**
      * @var string
      */
-    protected $_template = 'MageMoto_AlsoBought::product/list/items.phtml';
+    protected $_template = 'Mavenbird_AlsoBought::product/list/items.phtml';
 
     /**
      * @var CollectionFactory
