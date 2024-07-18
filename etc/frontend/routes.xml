@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author MageMoto Commerce Team
+ * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="alsobought" frontName="alsobought">
+            <module name="MageMoto_AlsoBought"/>
+        </route>
+    </router>
+</config>

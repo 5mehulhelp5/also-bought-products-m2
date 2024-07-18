@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author MageMoto Commerce Team
+ * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">magemoto_alsobought_listing.magemoto_alsobought_listing_data_source</item>
+            <item name="deps" xsi:type="string">magemoto_alsobought_listing.magemoto_alsobought_listing_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">magemoto_alsobought_columns</item>
+    </argument>
+    <dataSource name="magemoto_alsobought_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">magemoto_alsobought_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">assoc_id</argument>
+            <argument name="requestFieldName" xsi:type="string">assoc_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">assoc_id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <exportButton name="export_button"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="magemoto_alsobought_columns">
+        <selectionsColumn name="ids">
+            <settings>
+                <indexField>assoc_id</indexField>
+                <visible>false</visible>
+            </settings>
+        </selectionsColumn>
+        <column name="sku">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Main Product</item>
+                </item>
+            </argument>
+        </column>
+        <column name="product_sup">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="label" xsi:type="string" translate="true">Main Product Qty</item>
+                </item>
+            </argument>
+        </column>
+        <column name="associate_sku">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Also Bought</item>
+                </item>
+            </argument>
+        </column>
+        <column name="ass_product_sup">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="label" xsi:type="string" translate="true">Associate Product Qty</item>
+                </item>
+            </argument>
+        </column>
+        <column name="sup">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="label" xsi:type="string" translate="true">Total Combo</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+</listing>

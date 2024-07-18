@@ -1,0 +1,103 @@
+/**
+ * MageMoto
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the magemoto.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.magemoto.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    MageMoto
+ * @package     MageMoto_AlsoBought
+ * @copyright   Copyright (c) MageMoto (https://www.magemoto.com/)
+ * @license     https://www.magemoto.com/LICENSE.txt
+ */
+
+.catalog-product-view, .checkout-cart-index {
+  .products-magemoto-alsobought .product-item-info {
+    width: auto !important;
+  }
+}
+.column.main .magemoto-alsobought-block .block {
+  margin-bottom: 50px;
+}
+
+.magemoto-alsobought-product-slider .product-item-info:hover,
+.magemoto-alsobought-product-slider .product-item-info.active {
+  background: #ffffff;
+  box-shadow: 3px 4px 4px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid #bbbbbb;
+  margin: -10px;
+  padding: 9px;
+  position: relative;
+  z-index: 2;
+}
+
+.magemoto-alsobought-product-slider li.product-item {
+  padding-bottom: 15px;
+}
+
+.sidebar .magemoto-alsobought-block .magemoto-alsobought-product-slider li.product-item {
+  padding: 15px;
+}
+
+.mmalsobouhgt-block {
+  box-sizing: border-box;
+  clear: both;
+}
+
+@media (min-width: 1440px) {
+  .sidebar .magemoto-alsobought-block .magemoto-alsobought-product-slider .product-item-info .product-item-details {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar .magemoto-alsobought-block .magemoto-alsobought-product-slider .product-item-info .product-item-photo {
+    float: none;
+    position: relative;
+  }
+
+  .cart-container .magemoto-alsobought-block .widget {
+    float: none;
+  }
+
+  .cart-container #magemoto-alsobought-block-before-cross,
+  .cart-container #magemoto-alsobought-block-after-cross {
+    width: 75%;
+    float: left;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    padding: 0 4% 0 0;
+    margin-top: 70px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sidebar .magemoto-alsobought-block .magemoto-alsobought-product-slider ol li {
+    padding-left: 20px;
+  }
+
+  .sidebar .magemoto-alsobought-block .magemoto-alsobought-product-slider ol li .product-item-photo {
+    margin: 0 10px 10px 0;
+    position: relative;
+  }
+
+  .sidebar .magemoto-alsobought-block .magemoto-alsobought-product-slider ol li .product-item-details {
+    margin: 0;
+  }
+
+  .cms-index-index.page-layout-1column .column.main, .cms-page-view.page-layout-1column .column.main, .checkout-cart-index.page-layout-1column .column.main, .catalog-product-view.page-layout-1column .column.main {
+    width: 100%;
+  }
+
+  .catalog-category-view.page-layout-2columns-left .column.main, .catalog-category-view.page-layout-2columns-left .sidebar.sidebar-main {
+    width: 80%;
+  }
+}

@@ -1,0 +1,161 @@
+<?php
+/**
+ * @author MageMoto Commerce Team
+ * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/** @var \MageMoto\AlsoBought\Block\Product\ProductList\ProductList $block */
+$items = $block->getProductCollection();
+if (!empty($items)) :
+    $isSlider = $block->getLayoutSlider();
+    $image = 'recently_viewed_products_grid_content_widget';
+    $showList   = $block->getShowList();
+    $actionParam = \Magento\Framework\App\Action\Action::PARAM_NAME_URL_ENCODED;
+    $showAction  = in_array(\MageMoto\AlsoBought\Model\Config\Source\ShowList::SHOW_ADD, $showList, true);
+    $showCart   = in_array(\MageMoto\AlsoBought\Model\Config\Source\ShowList::SHOW_CART, $showList, true);
+    $showPrice  = in_array(\MageMoto\AlsoBought\Model\Config\Source\ShowList::SHOW_PRICE, $showList, true);
+    $showReview = in_array(\MageMoto\AlsoBought\Model\Config\Source\ShowList::SHOW_REVIEW, $showList, true);
+    ?>
+    <div style="clear: both"></div>
+    <div class="magemoto-alsobought-block">
+        <div class="block widget block-products-list grid">
+            <?php if ($title = $block->getTitleBlock()) : ?>
+                <div class="magemoto-alsobought-title block-title title">
+                    <h2 class="block-magemoto-alsobought-heading"><?= /** @noEscape */ $title ?></h2>
+                </div>
+            <?php endif ?>
+            <div class="block-content content">
+                <div class="<?= /** @noEscape */ $isSlider ? 'products wrapper magemoto-alsobought-product-slider'
+                    : 'grid products-grid' ?> products-magemoto-alsobought">
+                    <ol class="product-items <?= $isSlider ? 'owl-carousel owl-theme' : 'widget-product-grid' ?>"
+                        id="<?= /** @noEscape */ $isSlider ? 'magemoto-alsobought-slider' : 'magemoto-alsobought-grid' ?>">
+                        <?php $iterator = 1 ?>
+                        <?php foreach ($items as $_item) : ?>
+                            <?php /* @escapeNotVerified */ if ($iterator++ === 1) : ?>
+                        <li class="product-item">
+                            <?php else : ?>
+                        </li>
+                        <li class="product-item">
+                            <?php endif ?>
+                            <div class="product-item-info">
+                                <a href="<?= /** @noEscape */ $block->getProductUrl($_item) ?>"
+                                   class="product-item-photo">
+                                    <?= /** @noEscape */ $block->getImage($_item, $image)->toHtml() ?>
+                                </a>
+                                <div class="product-item-details">
+                                    <strong class="product-item-name">
+                                        <a class="product-item-link"
+                                           title="<?= /** @noEscape */ $block->escapeHtml($_item->getName()) ?>"
+                                           href="<?= /** @noEscape */ $block->getProductUrl($_item) ?>">
+                                            <?= /** @noEscape */ $block->escapeHtml($_item->getName()) ?>
+                                        </a>
+                                    </strong>
+
+                                    <?php if ($showReview) : ?>
+                                        <?= /** @noEscape */ $block->getReviewsSummaryHtml(
+                                            $_item,
+                                            \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW,
+                                            true
+                                        ) ?>
+                                    <?php endif ?>
+
+                                    <?php if ($showPrice) : ?>
+                                        <?= /** @noEscape */ $block->getProductPrice($_item) ?>
+                                    <?php endif ?>
+
+                                    <?php if ($showCart || $showAction) : ?>
+                                        <div class="product-item-inner">
+                                            <div class="product-item-actions" style="margin: unset">
+                                                <?php if ($showCart) : ?>
+                                                    <div class="actions-primary">
+                                                        <?php if ($_item->isSaleable()) : ?>
+                                                            <?php $postParams = $block->getAddToCartPostParams($_item); ?>
+                                                            <form data-role="tocart-form"
+                                                                  data-product-sku="<?= $block->escapeHtml($_item->getSku()) ?>"
+                                                                  action="<?= /* @NoEscape */ $postParams['action'] ?>"
+                                                                  method="post">
+                                                                <input type="hidden" name="product" value="<?= /* @escapeNotVerified */ $postParams['data']['product'] ?>">
+                                                                <input type="hidden" name="<?= /** @noEscape */  $actionParam ?>" value="<?= /** @noEscape */  $postParams['data'][$actionParam] ?>">
+                                                                <?= $block->getFormKeyHtml() ?>
+                                                                <button type="submit" title="<?= $block->escapeHtml(__('Add to Cart')) ?>" class="action tocart primary">
+                                                                    <span><?= /** @noEscape */ __('Add to Cart') ?></span>
+                                                                </button>
+                                                            </form>
+                                                        <?php else : ?>
+                                                            <?php if ($_item->getIsSalable()) : ?>
+                                                                <div class="stock available"><span><?= /** @noEscape */ __('In stock') ?></span></div>
+                                                            <?php else : ?>
+                                                                <div class="stock unavailable">
+                                                                    <span><?= /** @noEscape */ __('Out of stock') ?></span></div>
+                                                            <?php endif ?>
+                                                        <?php endif ?>
+                                                    </div>
+                                                <?php endif ?>
+                                                <?php if ($showAction) : ?>
+                                                    <div class="actions-secondary" data-role="add-to-links">
+                                                        <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow()) : ?>
+                                                            <a href="#"
+                                                               data-post='<?= /* @noEscape */ $block->getAddToWishlistParams($_item) ?>' class="action towishlist" data-action="add-to-wishlist" title="<?= $block->escapeHtmlAttr(__('Add to Wish List')) ?>">
+                                                                <span><?= $block->escapeHtml(__('Add to Wish List')) ?></span>
+                                                            </a>
+                                                        <?php endif; ?>
+                                                        <?php if ($block->getAddToCompareUrl()) : ?>
+                                                            <?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');?>
+                                                            <a href="#" class="action tocompare" data-post='<?= /* @noEscape */ $compareHelper->getPostDataParams($_item) ?>' title="<?= $block->escapeHtmlAttr(__('Add to Compare')) ?>">
+                                                                <span><?= $block->escapeHtml(__('Add to Compare')) ?></span>
+                                                            </a>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                <?php endif ?>
+                                            </div>
+                                        </div>
+                                    <?php endif ?>
+                                </div>
+                            </div>
+                            <?= ($iterator === count($items) + 1) ? '</li>' : '' ?>
+                        <?php endforeach ?>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+    <?php if (!$block->isRedirectToCartEnabled()) : ?>
+    <script type="text/x-magento-init">
+        {
+            "[data-role=tocart-form], .form.map.checkout": {
+                "catalogAddToCart": {}
+            }
+        }
+
+    </script>
+    <?php endif; ?>
+    <?php if ($isSlider) : ?>
+    <script>
+        require(['jquery', 'magemoto/alsobought/owl.carousel'], function ($) {
+            $('#magemoto-alsobought-slider').owlCarousel({
+                items: 5,
+                margin: 20,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                lazyLoad: true,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 2
+                    },
+                    640: {
+                        items: 3
+                    },
+                    1024: {
+                        items: 5
+                    }
+                }
+            });
+        });
+    </script>
+    <?php endif; ?>
+<?php endif ?>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author MageMoto Commerce Team
+ * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <alsobought>
+            <module>
+                <user_guide>who-bought-this-also-bought</user_guide>
+                <change_log>who-bought-also-bought</change_log>
+            </module>
+            <general>
+                <enabled>1</enabled>
+                <type>1</type>
+                <process_order_status>complete</process_order_status>
+                <free_item>0</free_item>
+                <current_order_id>0</current_order_id>
+                <cache_lifetime>86400</cache_lifetime>
+            </general>
+            <catalog_product_view>
+                <enabled>1</enabled>
+                <heading_label>Who bought this item also bought</heading_label>
+                <position>after-content</position>
+                <layout>1</layout>
+                <show_list>price,addtocart,review,addto</show_list>
+                <limit_product>10</limit_product>
+            </catalog_product_view>
+            <catalog_category_view>
+                <enabled>0</enabled>
+                <heading_label>Who bought this item also bought</heading_label>
+                <position>after-content</position>
+                <layout>1</layout>
+                <show_list>price,addtocart,review,addto</show_list>
+                <limit_product>10</limit_product>
+            </catalog_category_view>
+            <checkout_cart_index>
+                <enabled>0</enabled>
+                <heading_label>Who bought this item also bought</heading_label>
+                <position>after-content</position>
+                <layout>1</layout>
+                <show_list>price,addtocart,review,addto</show_list>
+                <limit_product>10</limit_product>
+            </checkout_cart_index>
+        </alsobought>
+    </default>
+</config>

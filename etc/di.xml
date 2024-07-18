@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author MageMoto Commerce Team
+ * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="MageMoto\AlsoBought\Api\AlsoBoughtRepositoryInterface" type="MageMoto\AlsoBought\Model\AlsoBoughtRepository" />
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="magemoto_alsobought_reindex" xsi:type="object">MageMoto\AlsoBought\Console\Command\Reindex</item>
+                <item name="magemoto_alsobought_reindex_all" xsi:type="object">MageMoto\AlsoBought\Console\Command\ReindexAll</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="magemoto_alsobought_listing_data_source" xsi:type="string">MageMoto\AlsoBought\Model\ResourceModel\Associate\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

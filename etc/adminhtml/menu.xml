@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @author MageMoto Commerce Team
+ * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MageMoto_AlsoBought::alsobought" title="Who Bought This Also Bought" module="MageMoto_AlsoBought" sortOrder="999" resource="MageMoto_AlsoBought::alsobought" parent="Magento_Backend::stores"/>
+        <add id="MageMoto_AlsoBought::logs" title="Logs" module="MageMoto_AlsoBought" sortOrder="10" action="mmalsobouhgt/logs" resource="MageMoto_AlsoBought::logs" parent="MageMoto_AlsoBought::alsobought"/>
+        <add id="MageMoto_AlsoBought::configuration" title="Configuration" module="MageMoto_AlsoBought" sortOrder="20" action="adminhtml/system_config/edit/section/alsobought" resource="MageMoto_AlsoBought::configuration" parent="MageMoto_AlsoBought::alsobought"/>
+    </menu>
+</config>

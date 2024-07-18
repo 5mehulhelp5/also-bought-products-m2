@@ -1,0 +1,125 @@
+<?php
+/**
+ * @author MageMoto Commerce Team
+ * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/** @var \MageMoto\AlsoBought\Block\Product\ProductList\AlsoBought $block */
+if (!empty($block->getAjaxData())) :
+    $showList   = $block->getShowList();
+    $actionParam = \Magento\Framework\App\Action\Action::PARAM_NAME_URL_ENCODED;
+    $showAction  = in_array(\MageMoto\AlsoBought\Model\Config\Source\ShowList::SHOW_ADD, $showList, true);
+    $showCart   = in_array(\MageMoto\AlsoBought\Model\Config\Source\ShowList::SHOW_CART, $showList, true);
+    $showPrice  = in_array(\MageMoto\AlsoBought\Model\Config\Source\ShowList::SHOW_PRICE, $showList, true);
+    $showReview = in_array(\MageMoto\AlsoBought\Model\Config\Source\ShowList::SHOW_REVIEW, $showList, true);
+    $isSlider = $block->getLayoutSlider();
+    $elementId = $block->getWidgetBlockName();
+    $templateId = 'mm-alsobought-product-list-' . uniqid('', false);
+    $sliderId = 'magemoto-alsobought-slider-' . uniqid('', false);
+    ?>
+<script id="<?= /** @noEscape */ $templateId ?>" type="text/x-magento-template">
+    <div class="magemoto-alsobought-block">
+        <div class="block block-alsobought-sidebar">
+            <?php if ($title = $block->getTitleBlock()) : ?>
+                <div class="magemoto-alsobought-title block-title title">
+                    <h2 class="block-magemoto-alsobought-heading"><?= /** @noEscape */ $title ?></h2>
+                </div>
+            <?php endif ?>
+            <div class="block-content">
+                <div class="products-magemoto-alsobought">
+                    <ol class="product-items <?= $isSlider ? 'owl-carousel owl-theme' : '' ?>"
+                        id="<?= $isSlider ? /** @noEscape */ $sliderId : 'magemoto-alsobought-grid' ?>">
+                        <% _.each(data.productList, function(item) { %>
+                        <li class="product-item">
+                            <div class="product-item-info">
+                                <a href="<%- item.product_url %>"
+                                   class="product-item-photo">
+                                    <%= item.product_small_image %>
+                                </a>
+                                <div class="product-item-details">
+                                    <strong class="product-item-name">
+                                        <a class="product-item-link"
+                                           title="<%- item.product_name %>"
+                                           href="<%- item.product_url %>">
+                                            <%- item.product_name %>
+                                        </a>
+                                    </strong>
+
+                                    <?php if ($showReview) : ?>
+                                        <%= item.product_review %>
+                                    <?php endif ?>
+
+                                    <?php if ($showPrice) : ?>
+                                        <%= item.product_price %>
+                                    <?php endif ?>
+                                    <?php if ($showCart || $showAction) : ?>
+                                        <div class="product-item-actions">
+                                            <?php if ($showCart) : ?>
+                                                <div class="actions-primary">
+                                                    <% if (item.isSaleable) { %>
+                                                        <form data-role="tocart-form"
+                                                              data-product-sku="<%- item.product_sku %>"
+                                                              action="<%- item.post_params.action %>"
+                                                              method="post">
+                                                            <input type="hidden" name="product" value="<%- item.post_params.data.product %>">
+                                                            <input type="hidden" name="<?= /** @noEscape */ $actionParam ?>" value="<%- item.post_params.data.uenc %>">
+                                                            <?= $block->getFormKeyHtml() ?>
+                                                            <button type="submit" title="<?= $block->escapeHtml(__('Add to Cart')) ?>" class="action tocart primary">
+                                                                <span><?= /** @noEscape */ __('Add to Cart') ?></span>
+                                                            </button>
+                                                        </form>
+                                                    <% } else { %>
+                                                        <% if (item.stock) { %>
+                                                            <div class="stock available"><span><?= /** @noEscape */ __('In stock') ?></span></div>
+                                                        <% } else { %>
+                                                            <div class="stock unavailable">
+                                                                <span><?= /** @noEscape */ __('Out of stock') ?></span></div>
+                                                        <% } %>
+                                                    <% } %>
+                                                </div>
+                                            <?php endif ?>
+                                            <?php if ($showAction) : ?>
+                                                <div class="actions-secondary" data-role="add-to-links">
+                                                    <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow()) : ?>
+                                                        <a href="#"
+                                                           data-post='<%- item.wishlist_params %>' class="action towishlist" data-action="add-to-wishlist" title="<?= $block->escapeHtmlAttr(__('Add to Wish List')) ?>">
+                                                            <span><?= $block->escapeHtml(__('Add to Wish List')) ?></span>
+                                                        </a>
+                                                    <?php endif; ?>
+                                                        <a href="#" class="action tocompare" data-post='<%- item.compare_params %>' title="<?= $block->escapeHtmlAttr(__('Add to Compare')) ?>">
+                                                            <span><?= $block->escapeHtml(__('Add to Compare')) ?></span>
+                                                        </a>
+                                                </div>
+                                            <?php endif ?>
+                                        </div>
+                                    <?php endif ?>
+                                </div>
+                            </div>
+                        </li>
+                        <% }); %>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+</script>
+
+<div id="<?= /** @noEscape */ $elementId ?>"></div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "magemoto/alsobought_block": {
+                "ajaxData": <?= /** @noEscape */ $block->getAjaxData() ?>,
+                "elementId": "<?= /** @noEscape */ $elementId ?>",
+                "templateId": "<?= /** @noEscape */ $templateId ?>",
+                "sliderId": "<?= /** @noEscape */ $sliderId ?>"
+            }
+        }
+    }
+</script>
+<?php endif; ?>

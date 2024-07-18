@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author MageMoto Commerce Team
+ * @copyright Copyright (c) 2020 MageMoto Commerce (https://www.magemoto.com)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="mm_wbab_product_assoc" resource="default" engine="innodb" comment="Who Bought This Item Also Bought">
+        <column xsi:type="int" name="assoc_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Associate id"/>
+        <column xsi:type="int" name="product_id" padding="10" unsigned="true" nullable="false" comment="Product id"/>
+        <column xsi:type="int" name="product_assoc_id" padding="10" unsigned="true" nullable="false" comment="Product Associate id"/>
+        <column xsi:type="int" name="product_sup" padding="10" unsigned="true" nullable="false" default="0" comment="Product support"/>
+        <column xsi:type="int" name="sup" padding="10" unsigned="true" nullable="false" default="0" comment="Support A/B"/>
+        <column xsi:type="decimal" name="rpf" scale="4" precision="12" unsigned="true" nullable="false" default="0" comment="Rule Power Factor"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="assoc_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="WBAB_PRODUCT_ID_FOREIGN" table="mm_wbab_product_assoc" column="product_id" referenceTable="catalog_product_entity" referenceColumn="entity_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="WBAB_PRODUCT_ASSOC_ID_FOREIGN" table="mm_wbab_product_assoc" column="product_assoc_id" referenceTable="catalog_product_entity" referenceColumn="entity_id" onDelete="CASCADE"/>
+        <constraint xsi:type="unique" referenceId="WBAB_PRODUCT_ASSOCIATE_UNIQUE">
+            <column name="product_id"/>
+            <column name="product_assoc_id"/>
+        </constraint>
+        <index referenceId="WBAB_PRODUCT_MAIN" indexType="btree">
+            <column name="product_id"/>
+        </index>
+    </table>
+</schema>

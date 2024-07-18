@@ -1,0 +1,21 @@
+{
+    "mm_wbab_product_assoc": {
+        "column": {
+            "assoc_id": true,
+            "product_id": true,
+            "product_assoc_id": true,
+            "product_sup": true,
+            "sup": true,
+            "rpf": true
+        },
+        "index": {
+            "WBAB_PRODUCT_MAIN": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "WBAB_PRODUCT_ID_FOREIGN": true,
+            "WBAB_PRODUCT_ASSOC_ID_FOREIGN": true,
+            "WBAB_PRODUCT_ASSOCIATE_UNIQUE": true
+        }
+    }
+}
